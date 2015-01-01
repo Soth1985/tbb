@@ -1,0 +1,11 @@
+tbbmalloc/scalable_allocator.h
+bool __TBB_EXPORTED_FUNC is_tbb_malloc_ptr(void* ptr);
+
+tbbmaloc/frontend.cpp
+extern "C" bool is_tbb_malloc_ptr(void* ptr)
+{
+	return isRecognized(ptr);
+}
+
+tbbmalloc/win32-tbbmalloc-export.def
+is_tbb_malloc_ptr
